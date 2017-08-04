@@ -30,9 +30,8 @@
 	cursor: not-allowed;
 }
 .card_item.matched {
-	filter: blur(10px);
-	-webkit-filter: blur(10px);
-	opacity: 0.96;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
 }
 button#startNewGame {
 	padding: 5px 10px;

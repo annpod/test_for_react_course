@@ -13,15 +13,16 @@ let newGame = function(){
 
     Promise.all([cardImages,gameSize])
         .then(function(values){
-            let game_images = values[0];
-            let game_size = values[1];
+            let gameImages = values[0];
+            let gameSize = values[1];
             let gameProperties = document.getElementById('gameProperties');
-            let width = (game_size.width%2) ? (game_size.width+1) : game_size.width;
-            let height = (game_size.height%2) ? (game_size.height+1) : game_size.height;
+            let width = (gameSize.width%2) ? (gameSize.width+1) : gameSize.width;
+            let height = (gameSize.height%2) ? (gameSize.height+1) : gameSize.height;
             gameProperties.innerHTML = 'width : ' + width + '; height : ' + height;
-            const Game = new Cards('gameContent', game_size, game_images);
+            const Game = new Cards('gameContent', gameSize, gameImages);
         });
 };
 newGame();
 document.getElementById('startNewGame').addEventListener('click', newGame, false);
+
 

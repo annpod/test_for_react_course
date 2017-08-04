@@ -12,13 +12,13 @@ var newGame = function newGame() {
     });
 
     Promise.all([cardImages, gameSize]).then(function (values) {
-        var game_images = values[0];
-        var game_size = values[1];
+        var gameImages = values[0];
+        var gameSize = values[1];
         var gameProperties = document.getElementById('gameProperties');
-        var width = game_size.width % 2 ? game_size.width + 1 : game_size.width;
-        var height = game_size.height % 2 ? game_size.height + 1 : game_size.height;
+        var width = gameSize.width % 2 ? gameSize.width + 1 : gameSize.width;
+        var height = gameSize.height % 2 ? gameSize.height + 1 : gameSize.height;
         gameProperties.innerHTML = 'width : ' + width + '; height : ' + height;
-        var Game = new Cards('gameContent', game_size, game_images);
+        var Game = new Cards('gameContent', gameSize, gameImages);
     });
 };
 newGame();

@@ -40,13 +40,13 @@ class Cards {
             this.container.appendChild(row);
         };
     }
-    generateCard(card_id){
+    generateCard(cardId){
         let cardWrapp = document.createElement("span");
         cardWrapp.className = "card_item_wrap";
         let card = document.createElement("img");
         card.className = "card_item";
-        card.setAttribute("id", 'card_id_'+card_id);
-        card.setAttribute("src", SERVER_URL + this.card_images[card_id]);
+        card.setAttribute("id", 'card_id_'+cardId);
+        card.setAttribute("src", SERVER_URL + this.card_images[cardId]);
         card.addEventListener('click', this.handleCardClick.bind(this));
         cardWrapp.appendChild(card);
         return cardWrapp;
@@ -85,7 +85,7 @@ class Cards {
             }
             if(this.visibleCards.length === 2) {
                 if (this.visibleCards[0].getAttribute('src') === this.visibleCards[1].getAttribute('src')) {
-                    setTimeout(this.setVisibleCardsAsMatched.bind(this), 400);	// we have to show matched cards before hiding them
+                    setTimeout(this.setVisibleCardsAsMatched.bind(this), 200);	// we have to show matched cards before hiding them
                     this.flippedCardsCounter += 2;
                     if (this.flippedCardsCounter === this.width * this.height) { this.winGame(); };
                 }
